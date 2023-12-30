@@ -7,6 +7,5 @@ export default defineNuxtConfig({
   app: {
     baseURL: '/msu-naawan/',
     buildAssetsDir: 'assets'
-  },
-  plugins:['@/plugins/antd']
+  }
 })
