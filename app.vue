@@ -1,6 +1,13 @@
 <template>
   <div>
-    <h1>Hello World</h1>
+    <a-button @click="handleMessage">
+      button
+    </a-button>
     <!-- <NuxtWelcome /> -->
   </div>
 </template>
+<script lang="ts" setup>
+const handleMessage = () => {
+  message.info("This is a normal message");
+}
+</script>
