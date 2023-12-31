@@ -26,7 +26,7 @@ export default defineNuxtConfig({
       Components({
         resolvers: [
           // resolveIcons true will error with NITRO_PRESET=cloudflare
-          AntDesignVueResolver({ resolveIcons: true, importStyle: "less" }),
+          AntDesignVueResolver({ importStyle: "less" }),
         ],
         dts: "types/components.d.ts",
       }),
