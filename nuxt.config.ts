@@ -12,13 +12,23 @@ export default defineNuxtConfig({
     buildAssetsDir: 'assets'
   },
   vite: {
+    ssr: {
+      noExternal: ["ant-design-vue"],
+    },
+    css: {
+      preprocessorOptions: {
+        less: {
+          javascriptEnabled: true,
+        },
+      },
+    },
     plugins: [
       Components({
-        resolvers: [AntDesignVueResolver(
-          {
-            importStyle: false,
-          }
-        )],
+        resolvers: [
+          // resolveIcons true will error with NITRO_PRESET=cloudflare
+          AntDesignVueResolver({ resolveIcons: true, importStyle: "less" }),
+        ],
+        dts: "types/components.d.ts",
       }),
     ]
   },
