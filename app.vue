@@ -1,35 +1,13 @@
 <template>
-  <a-flex gap="middle" vertical>
-    <a-radio-group v-model:value="value">
-      <a-radio value="horizontal">horizontal</a-radio>
-      <a-radio value="vertical">vertical</a-radio>
-    </a-radio-group>
-    <a-flex :vertical="value === 'vertical'">
-      <div
-        v-for="(item, index) in new Array(4)"
-        :key="item"
-        :style="{ ...baseStyle, background: `${index % 2 ? '#1677ff' : '#1677ffbf'}` }"
-      />
-    </a-flex>
-  </a-flex>
-<br>
-  <a-space wrap>
-    <a-button type="primary">Primary Button</a-button>
-    <a-button>Default Button</a-button>
-    <a-button type="dashed">Dashed Button</a-button>
-    <a-button type="text">Text Button</a-button>
-    <a-button type="link">Link Button</a-button>
-  </a-space>
+  <div>
+    <a-button @click="handleMessage">
+      button
+    </a-button>
+    <!-- <NuxtWelcome /> -->
+  </div>
 </template>
-<script setup lang="ts">
-import { ref } from 'vue';
-import type { CSSProperties } from 'vue';
-const value = ref('horizontal');
-const baseStyle: CSSProperties = {
-  width: '25%',
-  height: '54px',
-};
-
-import { Button } from 'ant-design-vue';
-  const ButtonGroup = Button.Group;
+<script lang="ts" setup>
+const handleMessage = () => {
+  message.info("This is a normal message");
+}
 </script>
