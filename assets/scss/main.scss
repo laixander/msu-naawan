@@ -85,6 +85,19 @@ body {
                         background-color: #F8F9FA;
                     } 
                 }
+                .student {
+                    &-info {
+                        width: 100%;
+                        max-width: 330px;
+                        text-align: center;
+                        .ant-avatar {
+                            margin-bottom: 0.35em;
+                        }
+                        .ant-typography {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
             }
             .intro {
                 div {
