@@ -12,15 +12,21 @@
 <script lang="ts" setup>
 import { ref, computed, toRefs } from 'vue';
 import { useRoute } from 'vue-router';
-import { DashboardOutlined, UserOutlined, SwapOutlined } from '@ant-design/icons-vue';
+import { DashboardOutlined, AppstoreOutlined } from '@ant-design/icons-vue';
 
 const route = useRoute();
 const { path } = toRefs(route);
 
 const menuItems = ref([
   { key: '1', to: '/', icon: DashboardOutlined, label: 'Dashboard' },
-  { key: '2', to: '/students', icon: UserOutlined, label: 'Students' },
-  { key: '3', to: '/shift-course', icon: SwapOutlined, label: 'Shift Course' },
+  { key: '2', to: '/students', icon: AppstoreOutlined, label: 'Students' },
+  { key: '3', to: '/credit-subject', icon: AppstoreOutlined, label: 'Credit Subject' },
+  { key: '4', to: '/subject-override', icon: AppstoreOutlined, label: 'Subject Override' },
+  { key: '5', to: '/unit-override', icon: AppstoreOutlined, label: 'Unit Override' },
+  { key: '6', to: '/subject-request', icon: AppstoreOutlined, label: 'Subject Request' },
+  { key: '7', to: '/enrollment-cancellation', icon: AppstoreOutlined, label: 'Enrollment Cancellation' },
+  { key: '8', to: '/grade-slip', icon: AppstoreOutlined, label: 'Grade Slip' },
+  { key: '9', to: '/alumni', icon: AppstoreOutlined, label: 'Alumni' }
 ]);
 
 const selectedKeys = computed(() => {
