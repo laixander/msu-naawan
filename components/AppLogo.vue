@@ -1,9 +1,11 @@
 <template>
     <div class="logo">
         <!-- <GithubOutlined /> -->
-        <img src="/img/app-logo.png" width="60" alt="">
+        <img src="/img/app-logo.png" alt="MSU Naawan">
         <a-typography-text strong>
-            Awesome App
+            Mindanao<br>
+            State<br>
+            University
         </a-typography-text>
     </div>
 </template>

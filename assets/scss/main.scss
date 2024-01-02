@@ -41,12 +41,18 @@ body {
                 align-items: center; 
                 gap: 16px; 
                 flex-wrap: nowrap;
-                .anticon {
-                    font-size: 48px;
-                }
+                // .anticon {
+                //     font-size: 48px;
+                // }
                 .ant-typography {
                     overflow: hidden;
                     white-space: nowrap;
+                    text-align: left;
+                    line-height: 1.3em;
+                }
+                img {
+                    max-width: 60px;
+                    width: 100%;
                 }
             }
             .ant-menu {
@@ -86,6 +92,7 @@ body {
                     } 
                 }
                 .student {
+                    width: 100%;
                     &-info {
                         width: 100%;
                         max-width: 330px;
@@ -95,6 +102,17 @@ body {
                         }
                         .ant-typography {
                             margin-bottom: 0;
+                        }
+                    }
+                    .ant-table-wrapper {
+                        .ant-table-tbody {
+                            > tr.ant-table-row {
+                                &:hover {
+                                    > td {
+                                        background-color: #e6f4ff;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
