@@ -13,31 +13,30 @@
                 </a-button>
             </a-flex>
 
-            <a-card title="List of Students" class="container-cards" :bordered="false" :bodyStyle="display === 'card' ? { padding: '24px' } : { padding: '0' }">
+            <a-card title="List of Students" class="container-cards" :bordered="false" :bodyStyle="display === 'Card' ? { padding: '24px' } : { padding: '0' }">
                 <template #extra>
-                    <a-radio-group v-model:value="display">
-                        <a-radio-button value="card">
-                            <BlockOutlined :style="iconSize" /> Card
-                        </a-radio-button>
-                        <a-radio-button value="table">
-                            <TableOutlined :style="iconSize" /> Table
-                        </a-radio-button>
-                    </a-radio-group>
+                    <a-segmented v-model:value="display" :options="type" />
                 </template>
-                <a-flex gap="12" wrap="wrap" v-if="display === 'card'">
-                    <a-card hoverable class="student-info" v-for="student in students" :key="student.id"
-                        @click="showDrawer(student)">
-                        <a-avatar :size="72">
-                            <template #icon>
-                                <UserOutlined />
-                            </template>
-                        </a-avatar>
-                        <a-typography-paragraph strong>{{ student.name }}</a-typography-paragraph>
-                        <a-typography-paragraph type="secondary">{{ student.number }}</a-typography-paragraph>
-                    </a-card>
-                </a-flex>
+                <template v-if="display === 'Card'">
+                    <a-row :gutter="[16, 16]">
+                        <template v-for="student in paginatedStudents" :key="student.id">
+                            <a-col :xs="24" :sm="12" :md="6">
+                                <a-card hoverable class="student-info" @click="showDrawer(student)">
+                                    <a-avatar :size="72">
+                                        <template #icon>
+                                            <UserOutlined />
+                                        </template>
+                                    </a-avatar>
+                                    <a-typography-paragraph strong>{{ student.name }}</a-typography-paragraph>
+                                    <a-typography-paragraph type="secondary">{{ student.number }}</a-typography-paragraph>
+                                </a-card>
+                            </a-col>
+                        </template>
+                    </a-row>
+                    <a-pagination v-model:current="current" :total="totalStudents" :page-size="pageSize" show-less-items @change="handlePageChange" :style="{ textAlign: 'right', paddingTop: '16px' }" />
+                </template>
 
-                <a-flex v-if="display === 'table'">
+                <a-flex v-if="display === 'Table'">
 
                     <a-table :columns="columns" :data-source="students" style="width: 100%;">
                         <template #headerCell="{ column }">
@@ -111,7 +110,9 @@ interface Student {
 }
 
 const value = ref<string>('');
-const display = ref<string>('card');
+// const display = ref<string>('card');
+const type = reactive(['Card', 'Table']);
+const display = ref(type[0]);
 
 const onSearch = (searchValue: string) => {
     console.log('use value', searchValue);
@@ -143,6 +144,21 @@ const columns = [
 const students: Student[] = reactive(
     studentsJsonData
 )
+
+// Pagination
+const current = ref(1);
+const pageSize = 12; // Number of students per page
+const totalStudents = computed(() => students.length);
+
+const paginatedStudents = computed(() => {
+    const start = (current.value - 1) * pageSize;
+    const end = start + pageSize;
+    return students.slice(start, end);
+});
+
+const handlePageChange = (page: number) => {
+    current.value = page;
+};
 
 // Combine fname and lname into name for each student
 students.forEach(student => {
@@ -182,3 +198,40 @@ const handleOk = (e: MouseEvent) => {
   modalVisible.value = false;
 };
 </script>
+
+<style scoped lang="scss">
+.container {
+    padding: 24px;
+    &-cards {
+        width: 100%;
+        > :deep(.ant-card-body) {
+            border-top: 1px solid #F0F0F0;
+            background-color: #F8F9FA;
+        } 
+    }
+    .student {
+        width: 100%;
+        &-info {
+            width: 100%;
+            text-align: center;
+            .ant-avatar {
+                margin-bottom: 0.35em;
+            }
+            .ant-typography {
+                margin-bottom: 0;
+            }
+        }
+        .ant-table-wrapper {
+            .ant-table-tbody {
+                > tr.ant-table-row {
+                    &:hover {
+                        > td {
+                            background-color: #e6f4ff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+</style>
