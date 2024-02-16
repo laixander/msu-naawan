@@ -1,9 +1,8 @@
 <template>
     <section class="container" style="margin: 0 auto; width: 100%; max-width: 1440px;">
         <a-space direction="vertical" size="middle" class="student">
-            <a-flex justify="space-between">
-                <a-input-search v-model:value="value" placeholder="input search text" style="width: 200px"
-                    @search="onSearch" />
+            <a-flex class="toolbar" justify="space-between" gap="8" vertical>
+                <a-input-search v-model:value="value" placeholder="input search text" style="" @search="onSearch" />
 
                 <a-button type="primary" @click="showModal">
                     <template #icon>
@@ -219,6 +218,14 @@ const handleOk = (e: MouseEvent) => {
             }
             .ant-typography {
                 margin-bottom: 0;
+            }
+        }
+        .toolbar {
+            @media (min-width: 576px) {
+                flex-direction: row;
+                .ant-input-search {
+                    width: 200px;
+                }
             }
         }
         .ant-table-wrapper {
