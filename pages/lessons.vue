@@ -83,6 +83,9 @@
                 }
             }
         }
+        :deep(.ant-collapse-header-text) {
+            font-weight: 600;
+        }
     }
 }
 </style>
