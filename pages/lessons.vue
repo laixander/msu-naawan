@@ -20,11 +20,11 @@
     const faqs = ref([
         { 
             question: 'Can you walk us through your process for designing a user interface from initial concept to final product? How do you incorporate user feedback and usability testing throughout this process?',
-            answer: 'Certainly! My process starts with thorough research and creating prototypes. I incorporate user feedback by regularly seeking input from stakeholders and conducting usability testing sessions with representative users. Based on the insights gathered, I iterate on the design until we achieve a user-friendly interface that meets both project requirements and user needs.'
+            answer: 'Certainly! My process starts with understanding user needs and project requirements. Then, I create a design and gather feedback through usability testing with real users. Based on this feedback, I iterate on the design until we reach the final product. Throughout, I ensure open communication with stakeholders to align the design with their goals.'
         }, 
         { 
-            question: 'What tools and software are you familiar with?',
-            answer: 'I prioritize user research to gain insights into user needs, behaviors, and pain points. This informs the design decisions I make throughout the process. I conduct usability testing to gather feedback on prototypes, observing how users interact and incorporating their input to improve the design\'s usability. Additionally, I follow best practices in UX design, such as designing for accessibility and maintaining consistency across the interface.'
+            question: 'Can you discuss a time when you had to balance the needs of different stakeholders (such as clients, developers, and end-users) in a UI/UX project? How did you navigate conflicting priorities to achieve a successful outcome?',
+            answer: 'Certainly! In a previous project, I encountered differing priorities between clients, developers, and end-users. To navigate this, I facilitated open communication between stakeholders to understand their perspectives and concerns. By actively listening and collaborating, we identified common goals and priorities. I then worked to find creative solutions that addressed everyone\'s needs, ensuring the final design was user-friendly, technically feasible, and aligned with the client\'s vision. This approach resulted in a successful outcome that satisfied all stakeholders.'
         },
         { 
             question: 'In your opinion, what are the key principles of effective UI/UX design? How do you ensure that your designs are both aesthetically pleasing and user-friendly?',
