@@ -19,25 +19,30 @@
     const activeKey = ref([]);
     const faqs = ref([
         { 
-            question: 'Can you walk us through your process for designing a user interface from initial concept to final product? How do you incorporate user feedback and usability testing throughout this process?',
-            answer: 'Certainly! My process starts with understanding user needs and project requirements. Then, I create a design and gather feedback through usability testing with real users. Based on this feedback, I iterate on the design until we reach the final product. Throughout, I ensure open communication with stakeholders to align the design with their goals.'
+            question: 'Can you tell me about your design process and how you integrate usability testing and user feedback?',
+
+            answer: 'My design process typically starts with research and brainstorming to understand project requirements. Then, I create prototypes and conduct usability testing with users. Their feedback guides me in refining designs to ensure they\'re user-friendly and effective.'
         }, 
         { 
-            question: 'Can you discuss a time when you had to balance the needs of different stakeholders (such as clients, developers, and end-users) in a UI/UX project? How did you navigate conflicting priorities to achieve a successful outcome?',
-            answer: 'Certainly! In a previous project, I encountered differing priorities between clients, developers, and end-users. To navigate this, I facilitated open communication between stakeholders to understand their perspectives and concerns. By actively listening and collaborating, we identified common goals and priorities. I then worked to find creative solutions that addressed everyone\'s needs, ensuring the final design was user-friendly, technically feasible, and aligned with the client\'s vision. This approach resulted in a successful outcome that satisfied all stakeholders.'
+            question: 'Can you provide an example of a difficult project you\'ve worked on, explain how you solve it, and describe the outcome.',
+
+            answer: 'One challenging project I worked on involved redesigning a complex e-commerce website with a cluttered interface. To solve this, I conducted user interviews and analyzed feedback to identify pain points. Then, I created simplified wireframes and prototypes to streamline the user experience. The outcome was a more intuitive website layout that led to increased user engagement and higher conversion rates.'
         },
         { 
-            question: 'In your opinion, what are the key principles of effective UI/UX design? How do you ensure that your designs are both aesthetically pleasing and user-friendly?',
-            answer: 'The key principles of effective UI/UX design include clarity, consistency, simplicity, and empathy for the user. To ensure designs are both aesthetically pleasing and user-friendly, I prioritize user research and testing, adhere to design principles like visual hierarchy and balance, collaborate closely with stakeholders, and iterate on designs based on feedback and data analysis. By following these strategies, I aim to create interfaces that enhance user satisfaction and engagement.'
+            question: 'How do you strike a balance between design aesthetics and user-centered, intuitive design?',
+
+            answer: 'Balancing design aesthetics with user-centered, intuitive design involves prioritizing user needs while maintaining visual appeal. I achieve this by understanding user preferences through research and feedback, then integrating these insights into the design process. Iterative testing helps ensure the final product not only looks good but also functions seamlessly for users.'
         },
 
         { 
-            question: 'How do you stay updated on current design trends and emerging technologies in UI/UX design?',
-            answer: 'I regularly engage with design communities, attend conferences, and participate in workshops to stay informed about industry trends and emerging technologies. I follow influential designers and thought leaders on social media platforms like Twitter and LinkedIn, where I often discover new tools, techniques, and design inspiration. Additionally, I allocate time for continuous learning through online courses and reading industry publications to expand my skills and knowledge.'
+            question: 'How do you to keep yourself informed about the latest design trends?',
+
+            answer: 'To stay updated on the latest design trends, I regularly engage in various activities such as reading design blogs and articles, following influential designers on social media platforms, attending design conferences and workshops, and participating in online forums and communities. Additionally, I make it a point to experiment with new tools and techniques to broaden my skillset and stay ahead of emerging trends in the industry.'
         },
         { 
-            question: 'What tools and software do you have experience with in UI/UX design, and how do you leverage them to optimize your design process? Additionally, could you elaborate on specific techniques or features within these tools that you find particularly valuable in enhancing the UI/UX design?',
-            answer: 'Sure! I\'m experienced with Figma for UI/UX design. Figma\'s real-time collaboration feature allows me to work seamlessly with team members, making it easier to share feedback and iterate on designs together. Additionally, its prototyping capabilities enable me to create interactive prototypes to test user interactions early in the design process, ensuring that the final product meets user needs effectively.'
+            question: 'What design tools do you use and how do they help improve your design process?',
+
+            answer: 'I utilize a range of design tools to enhance my design process, including industry-standard software like Adobe Creative Suite (Photoshop, Illustrator, XD), Sketch, Figma, and prototyping tools like InVision or Marvel. These tools enable me to efficiently create wireframes, mockups, and prototypes, facilitating collaboration with stakeholders and developers. Additionally, they offer features such as version control and real-time collaboration, streamlining communication and ensuring smooth project workflows from conception to delivery.'
         },
     ]);
 </script>
