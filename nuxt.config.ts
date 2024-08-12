@@ -7,9 +7,9 @@ export default defineNuxtConfig({
     css: [
         '~/assets/scss/main.scss'
     ],
-    app: {
-        baseURL: '/',
-        // buildAssetsDir: 'assets',
-        pageTransition: { name: 'page', mode: 'out-in' }
-    }
+    // app: {
+    //     baseURL: '/',
+    //     // buildAssetsDir: 'assets',
+    //     pageTransition: { name: 'page', mode: 'out-in' }
+    // }
 })

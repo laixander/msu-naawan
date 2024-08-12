@@ -28,7 +28,9 @@
                                 <template #actions>
                                     <a-tooltip v-for="action in actions" :key="action.id">
                                         <template #title>{{ action.tooltip }}</template>
-                                        <component :is="action.icon" :key="action.key" />
+                                        <NuxtLink :to="action.link">
+                                            <component :is="action.icon" :key="action.key" />
+                                        </NuxtLink>
                                     </a-tooltip>
                                 </template>
                             </a-card>
@@ -70,31 +72,36 @@ const actions = ref([
           id: 'Name',
           tooltip: 'Name',
           key: 'name',
-          icon: HomeOutlined
+          icon: HomeOutlined,
+          link: '/classroom'
         },
         {
           id: 'Attendance',
           tooltip: 'Attendance',
           key: 'attendance',
-          icon: CheckCircleOutlined
+          icon: CheckCircleOutlined,
+          link: '/classroom'
         },
         {
           id: 'Task',
           tooltip: 'Task',
           key: 'task',
-          icon: ExperimentOutlined
+          icon: ExperimentOutlined,
+          link: '/classroom'
         },
         {
           id: 'Class Grade',
           tooltip: 'Class Grade',
           key: 'class-grades',
-          icon: PercentageOutlined
+          icon: PercentageOutlined,
+          link: '/classroom'
         },
         {
           id: 'Grade Criteria',
           tooltip: 'Grade Criteria',
           key: 'grade-criteria',
-          icon: UnorderedListOutlined
+          icon: UnorderedListOutlined,
+          link: '/classroom'
         }
 ]);
 
@@ -103,6 +110,11 @@ const columns = [
         title: 'Section',
         dataIndex: 'section',
         key: 'section',
+    },
+    {
+        title: 'Subject',
+        dataIndex: 'subject',
+        key: 'subject',
     },
     {
         title: 'Schedule',
@@ -132,6 +144,7 @@ for (let i = 1; i <= 4; i++) {
         {
             key: i.toString(), // Convert to string
             section: 'Section',
+            subject: 'Basic Programming',
             schedule: '08:00 AM - 12:00 PM, MWF',
             learningApproach: 'Synchronous',
             term: 'Midterm',
